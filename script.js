@@ -18,11 +18,11 @@ let songs = [
   },
   {
     id: 2,
-    songName: "Eminem - Without Me",
+    songName: "Alyssa - Khaabon Ke Parinday",
     songPath:
-      "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Eminem - Without Me.flac",
+      "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Khaabon Ke Parinday.flac",
     songCover:
-      "https://jays3aws.s3.ap-south-1.amazonaws.com/cover/withoutme.jpg",
+      "https://jays3aws.s3.ap-south-1.amazonaws.com/cover/khaboo.jpeg",
   },
   {
     id: 3,
