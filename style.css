@@ -263,7 +263,7 @@ align-self: flex-end;
   margin-left: 149px;
 }
 
-@media (max-width: 1560px ){
+@media (max-width: 1560px  ) and (min-width:1250px){
   #songName {
     font-size: 11.5px;
   }
