@@ -101,12 +101,13 @@ songItems.forEach((element) => {
     if (selectedSong) {
       audio.src = selectedSong.songPath;
       document.getElementById("song-name1").textContent = selectedSong.songName;
+      document.getElementById("hehe").src = selectedSong.songCover;
 
       updateMediaSessionMetadata(selectedSong);
       audio.play();
       audio.currentTime = 0;
       masterPlay.src =
-        "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-pause-solid.svg";
+        "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-pause-solid.png";
       masterPlay.alt = "pause-btn";
     }
   });
@@ -158,11 +159,11 @@ function masterPlay1() {
   if (audio.paused || audio.currentTime <= 0) {
     audio.play();
     masterPlay.src =
-      "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-pause-solid.svg";
+      "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-pause-solid.png";
     masterPlay.alt = "pause-btn";
   } else {
     audio.pause();
-    masterPlay.src = "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-play-solid.svg";
+    masterPlay.src = "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-play-solid.png";
     masterPlay.alt = "play-btn";
   }
 }
@@ -218,7 +219,7 @@ function playSelectedSong(index) {
 
   audio.src = selectedSong.songPath;
   document.getElementById("song-name1").textContent = selectedSong.songName;
-
+  document.getElementById("hehe").src = selectedSong.songCover;
   audio.currentTime = 0;
   masterPlay1(); // Play the song automatically
 }
