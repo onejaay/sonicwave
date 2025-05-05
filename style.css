@@ -28,8 +28,9 @@ display:flex;
 justify-content: center;
 align-items: center;
 opacity: 1;
-margin-top:470px;
+
 padding: 7px;
+align-self: flex-end;
 
 }
 .playimg img{
