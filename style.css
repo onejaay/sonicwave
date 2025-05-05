@@ -263,6 +263,15 @@ align-self: flex-end;
   margin-left: 149px;
 }
 
+@media (max-width: 1560px ){
+  #songName {
+    font-size: 15px;
+  }
+  #time-song {
+    font-size: 15px;
+  
+}
+}
 @media (max-width: 1250px) {
   .container1 {
     grid-template-columns: repeat(1, auto);
