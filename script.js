@@ -220,6 +220,8 @@ function playSelectedSong(index) {
   audio.src = selectedSong.songPath;
   document.getElementById("song-name1").textContent = selectedSong.songName;
   document.getElementById("hehe").src = selectedSong.songCover;
+  updateMediaSessionMetadata(selectedSong);
+
   audio.currentTime = 0;
   masterPlay1(); // Play the song automatically
 }
