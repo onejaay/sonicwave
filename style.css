@@ -200,16 +200,7 @@ align-self: flex-end;
   grid-template-rows: repeat(6, auto);
   display: grid;
   gap: 10px;
-}@media (max-width: 1518px  ) and (min-width:1251px){
-  #songName {
-    font-size: 11.5px;
-  }
-  #time-song {
-    font-size: 11.5px;
-  
 }
-}
-
 
 #song-cover {
   height: 8vh;
