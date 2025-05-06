@@ -16,9 +16,10 @@ let songs = [
     songPath: "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/End Of Beginning.flac",
     songCover: "https://jays3aws.s3.ap-south-1.amazonaws.com/cover/end.jpg",
   },
+
   {
     id: 2,
-    songName: "Alyssa - Khaabon Ke Parinday",
+    songName: "Khaabon Ke Parinday",
     songPath:
       "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Khaabon Ke Parinday.flac",
     songCover:
@@ -34,11 +35,11 @@ let songs = [
   },
   {
     id: 4,
-    songName: "girl in red - we fell in love in october",
+    songName: "Radiohead - Creep",
     songPath:
-      "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/girl in red - we fell in love in october.flac",
+      "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Creep.flac",
     songCover:
-      "https://jays3aws.s3.ap-south-1.amazonaws.com/cover/girlinred.jpeg",
+      "https://jays3aws.s3.ap-south-1.amazonaws.com/cover/creep.jpeg",
   },
   {
     id: 5,

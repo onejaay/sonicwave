@@ -6,13 +6,13 @@
   -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
 }
 .inputed{
-accent-color: rgba(219, 136, 136, 0.438);
-caret-color: grey;
+accent-color:rgb(92,116,132);
+
 
 }
 .bigbro{
 accent-color: rgba(221, 135, 77, 0.521);  
-caret-color: grey;
+
 
 }
 
@@ -200,7 +200,16 @@ align-self: flex-end;
   grid-template-rows: repeat(6, auto);
   display: grid;
   gap: 10px;
+}@media (max-width: 1518px  ) and (min-width:1251px){
+  #songName {
+    font-size: 11.5px;
+  }
+  #time-song {
+    font-size: 11.5px;
+  
 }
+}
+
 
 #song-cover {
   height: 8vh;
@@ -263,15 +272,6 @@ align-self: flex-end;
   margin-left: 149px;
 }
 
-@media (max-width: 1518px  ) and (min-width:1251px){
-  #songName {
-    font-size: 11.5px;
-  }
-  #time-song {
-    font-size: 11.5px;
-  
-}
-}
 
 @media (max-width: 1250px) {
   
