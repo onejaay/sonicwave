@@ -27,7 +27,7 @@ let songs = [
   },
   {
     id: 3,
-    songName: "Lucky Ali - Safarnama",
+    songName: "Safarnama",
     songPath:
       "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Lucky Ali - Safarnama.flac",
     songCover:
@@ -43,7 +43,7 @@ let songs = [
   },
   {
     id: 5,
-    songName: "Amit Trivedi - Iktara",
+    songName: "Iktara",
     songPath:
       "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Amit Trivedi - Iktara.flac",
     songCover: "https://jays3aws.s3.ap-south-1.amazonaws.com/cover/iktara.jpeg",
@@ -65,7 +65,7 @@ let songs = [
   },
   {
     id: 8,
-    songName: "Mohit Chauhan - Matargashti",
+    songName: "Matargashti",
     songPath:
       "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Mohit Chauhan - Matargashti.flac",
     songCover:
@@ -80,7 +80,7 @@ let songs = [
   },
   {
     id: 10,
-    songName: "Arjit Singh - Jhumbritalaiyya",
+    songName: "Jhumbritalaiyya",
     songPath:
       "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/Arjit Singh - Jhumbritalaiyya.flac",
     songCover:
