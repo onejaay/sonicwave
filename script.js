@@ -1,7 +1,5 @@
 let songIndex = 0;
-let audio = new Audio(
-  "https://jays3aws.s3.ap-south-1.amazonaws.com/audio/End Of Beginning.flac"
-);
+let audio = new Audio();
 let masterPlay = document.getElementById("masterplay");
 let progressBar = document.getElementById("range-bar");
 let timestamp = document.getElementById("timestamp");
@@ -93,6 +91,7 @@ songItems.forEach((element, i) => {
   element.getElementsByTagName("img")[0].alt = songs[i].songName;
   element.getElementsByClassName("songName")[0].textContent = songs[i].songName;
 });
+
 songItems.forEach((element) => {
   element.addEventListener("click", () => {
     let songName = element.querySelector(".songName").textContent;
@@ -101,6 +100,7 @@ songItems.forEach((element) => {
 
     if (selectedSong) {
       audio.src = selectedSong.songPath;
+      songIndex = selectedSong.id - 1;
       document.getElementById("song-name1").textContent = selectedSong.songName;
       document.getElementById("hehe").src = selectedSong.songCover;
 
@@ -113,15 +113,50 @@ songItems.forEach((element) => {
     }
   });
 });
+audio.src = songs[songIndex].songPath
+function masterPlay1() {
+  if (audio.paused || audio.currentTime <= 0) {
+    audio.play();
+    masterPlay.src =
+      "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-pause-solid.png";
+    masterPlay.alt = "pause-btn";
+  } else {
+    audio.pause();
+    masterPlay.src = "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-play-solid.png";
+    masterPlay.alt = "play-btn";
+  }
+}
+function nextSong() {
+  songIndex = (songIndex + 1) % songs.length; // Loop to first song if at last
+  playSelectedSong(songIndex);
+}
 
-audio.addEventListener("timeupdate", () => {
-  let progress = parseInt((audio.currentTime / audio.duration) * 100);
-  timestamp.textContent = `${formatTime(audio.currentTime)} / ${formatTime(
-    audio.duration
-  )}`;
+function prevSong() {
+  songIndex = (songIndex - 1 + songs.length) % songs.length; // Loop to last song if at first
+  playSelectedSong(songIndex);
+}
 
-  progressBar.value = progress;
-});
+// Function to play the selected song
+function playSelectedSong(index) {
+  let selectedSong = songs[index];
+
+  audio.src = selectedSong.songPath;
+  document.getElementById("song-name1").textContent = selectedSong.songName;
+  document.getElementById("hehe").src = selectedSong.songCover;
+  updateMediaSessionMetadata(selectedSong);
+
+  audio.currentTime = 0;
+  masterPlay1(); // Play the song automatically
+}
+
+let nextImg = document.getElementById("forward-play"); // Image for next song
+let prevImg = document.getElementById("backward-play"); // Image for previous song
+// Attach event listeners to images for next and previous song
+nextImg.addEventListener("click", nextSong);
+prevImg.addEventListener("click", prevSong);
+
+// If song ends, play next song and update image
+audio.addEventListener("ended", nextSong);
 
 progressBar.addEventListener("input", () => {
   let seekTime = (progressBar.value / 100) * audio.duration; // Convert progress value back to seconds
@@ -154,20 +189,7 @@ function updateMediaSessionMetadata(song) {
   }
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
 
-function masterPlay1() {
-  if (audio.paused || audio.currentTime <= 0) {
-    audio.play();
-    masterPlay.src =
-      "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-pause-solid.png";
-    masterPlay.alt = "pause-btn";
-  } else {
-    audio.pause();
-    masterPlay.src = "https://jays3aws.s3.ap-south-1.amazonaws.com/assets/circle-play-solid.png";
-    masterPlay.alt = "play-btn";
-  }
-}
 // (0:00)
 function formatTime(seconds) {
   let min = Math.floor(seconds / 60);
@@ -187,6 +209,9 @@ masterPlay.addEventListener("click", masterPlay1);
 volumebar.addEventListener("input", () => {
   audio.volume = volumebar.value / 100;
 });
+
+
+
 // Function to fetch and update durations
 function updateSongDurations() {
   songs.forEach((song, index) => {
@@ -201,35 +226,13 @@ function updateSongDurations() {
 // Call function to update durations when the page loads
 updateSongDurations();
 
-let nextImg = document.getElementById("forward-play"); // Image for next song
-let prevImg = document.getElementById("backward-play"); // Image for previous song
+audio.addEventListener("timeupdate", () => {
+  let progress = parseInt((audio.currentTime / audio.duration) * 100);
+  timestamp.textContent = `${formatTime(audio.currentTime)} / ${formatTime(
+    audio.duration
+  )}`;
 
-function nextSong() {
-  songIndex = (songIndex + 1) % songs.length; // Loop to first song if at last
-  playSelectedSong(songIndex);
-}
+  progressBar.value = progress;
+});
 
-function prevSong() {
-  songIndex = (songIndex - 1 + songs.length) % songs.length; // Loop to last song if at first
-  playSelectedSong(songIndex);
-}
-
-// Function to play the selected song
-function playSelectedSong(index) {
-  let selectedSong = songs[index];
-
-  audio.src = selectedSong.songPath;
-  document.getElementById("song-name1").textContent = selectedSong.songName;
-  document.getElementById("hehe").src = selectedSong.songCover;
-  updateMediaSessionMetadata(selectedSong);
-
-  audio.currentTime = 0;
-  masterPlay1(); // Play the song automatically
-}
-
-// Attach event listeners to images for next and previous song
-nextImg.addEventListener("click", nextSong);
-prevImg.addEventListener("click", prevSong);
-
-// If song ends, play next song and update image
-audio.addEventListener("ended", nextSong);
+document.getElementById("year").textContent = new Date().getFullYear();
