@@ -7,6 +7,7 @@ let volumebar = document.getElementById("volume");
 let timeSong = document.getElementById("time-song");
 let songItems = Array.from(document.getElementsByClassName("songitems"));
 
+/* all song data */
 let songs = [
   {
     id: 1,
@@ -85,13 +86,13 @@ let songs = [
       "https://jays3aws.s3.ap-south-1.amazonaws.com/cover/jhumbritalaiyya.jpeg",
   },
 ];
-
+/* grid fill */
 songItems.forEach((element, i) => {
   element.getElementsByTagName("img")[0].src = songs[i].songCover;
   element.getElementsByTagName("img")[0].alt = songs[i].songName;
   element.getElementsByClassName("songName")[0].textContent = songs[i].songName;
 });
-
+/*click and play  */
 songItems.forEach((element) => {
   element.addEventListener("click", () => {
     let songName = element.querySelector(".songName").textContent;
@@ -113,7 +114,10 @@ songItems.forEach((element) => {
     }
   });
 });
-audio.src = songs[songIndex].songPath
+
+audio.src = songs[songIndex].songPath /*initialized id 1 song */
+
+/* play img changes */
 function masterPlay1() {
   if (audio.paused || audio.currentTime <= 0) {
     audio.play();
@@ -167,11 +171,13 @@ progressBar.addEventListener("input", () => {
 audio.addEventListener("loadedmetadata", () => {
   if (!isNaN(audio.duration)) {
     progressBar.value = parseInt((audio.currentTime / audio.duration) * 100);
+
     timestamp.textContent = `${formatTime(audio.currentTime)} / ${formatTime(
       audio.duration
     )}`;
   }
 });
+
 // Android notification audio bar
 function updateMediaSessionMetadata(song) {
   if ("mediaSession" in navigator) {
@@ -227,12 +233,13 @@ function updateSongDurations() {
 updateSongDurations();
 
 audio.addEventListener("timeupdate", () => {
-  let progress = parseInt((audio.currentTime / audio.duration) * 100);
+  let progress = ((audio.currentTime / audio.duration) * 100);
   timestamp.textContent = `${formatTime(audio.currentTime)} / ${formatTime(
     audio.duration
   )}`;
-
   progressBar.value = progress;
 });
+
+
 
 document.getElementById("year").textContent = new Date().getFullYear();
