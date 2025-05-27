@@ -233,7 +233,7 @@ function updateSongDurations() {
 updateSongDurations();
 
 audio.addEventListener("timeupdate", () => {
-  let progress = ((audio.currentTime / audio.duration) * 100);
+  let progress = parseInt((audio.currentTime / audio.duration) * 100);
   timestamp.textContent = `${formatTime(audio.currentTime)} / ${formatTime(
     audio.duration
   )}`;
