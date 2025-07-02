@@ -103,6 +103,7 @@
   display: flex;
   height: 76.2vh;
   justify-content: space-between;
+  margin-top: 2vh;
 }
 .container1 {
   height: 65vh;
