@@ -6,38 +6,32 @@
   -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
 }
 
-.inputed{
-accent-color:rgb(92,116,132);
-
-
+.inputed {
+  accent-color: rgb(92, 116, 132);
 }
-.bigbro{
-accent-color: rgba(221, 135, 77, 0.521);  
-
-
+.bigbro {
+  accent-color: rgba(221, 135, 77, 0.521);
 }
 
-.playimg{
-  width:100px;
-  height:100px;
+.playimg {
+  width: 100px;
+  height: 100px;
   overflow: hidden;
   background-color: rgba(187, 170, 170, 0.109);
   backdrop-filter: blur(20px);
   box-shadow: 5px 5px 20px rgba(99, 98, 98, 0.466);
   border-radius: 20px;
-display:flex;
-justify-content: center;
-align-items: center;
-opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
 
-padding: 7px;
-align-self: flex-end;
-
+  padding: 7px;
+  align-self: flex-end;
 }
-.playimg img{
-  
-  height:95px;
-  width: 95px;;
+.playimg img {
+  height: 95px;
+  width: 95px;
   border-radius: 10px;
 }
 .container0 {
@@ -60,10 +54,10 @@ align-self: flex-end;
   background-color: rgba(255, 255, 255, 0.046);
   backdrop-filter: blur(10px);
 }
-.invisiblediv{
-  opacity:0;
+.invisiblediv {
+  opacity: 0;
   width: 10vw;
-  height:15vh;
+  height: 15vh;
 }
 .img-title img {
   /* padding-top: 4px; */
@@ -89,7 +83,7 @@ align-self: flex-end;
 }
 .link-bar a {
   display: flex;
-  align-items: center;  
+  align-items: center;
 
   color: rgb(219, 215, 215);
   text-decoration: none;
@@ -108,8 +102,7 @@ align-self: flex-end;
   padding: 10px;
   display: flex;
   height: 76.2vh;
- justify-content: space-between;
-
+  justify-content: space-between;
 }
 .container1 {
   height: 65vh;
@@ -128,9 +121,9 @@ align-self: flex-end;
 }
 .progressbar {
   display: flex;
-  
+
   background-color: rgba(43, 42, 42, 0.342);
-  height: 90px;
+  min-height: 90px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -159,7 +152,6 @@ align-self: flex-end;
 }
 
 .icons {
-  
   display: flex;
   gap: 20px;
   align-items: center;
@@ -238,7 +230,6 @@ align-self: flex-end;
 #volume {
   cursor: pointer;
   width: 70px;
-  
 }
 .footer {
   align-self: flex-end;
@@ -267,23 +258,20 @@ align-self: flex-end;
   margin-left: 149px;
 }
 
-
 @media (max-width: 1250px) {
-  
   .container1 {
     grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(10, auto);
     width: 95vw;
     height: 75vh;
   }
-  .invisiblediv{
+  .invisiblediv {
     display: none;
   }
-  .playimg{
+  .playimg {
     display: none;
   }
 
-  
   .mid {
     padding: 0;
     width: 100vw;
@@ -321,11 +309,10 @@ align-self: flex-end;
     width: 95vw;
     height: 75vh;
   }
- 
+
   .mid {
     width: 100vw;
     height: 78vh;
-  
   }
   .container1:hover {
     width: 95vw;
@@ -386,10 +373,7 @@ align-self: flex-end;
 }
 /* heh */
 
-.nav-bar .git{
- 
-margin-left: auto;
-margin-right: 10px;
+.nav-bar .git {
+  margin-left: auto;
+  margin-right: 10px;
 }
-
-
