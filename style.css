@@ -377,3 +377,12 @@
   margin-left: auto;
   margin-right: 10px;
 }
+@media (max-width: 460px) {
+  .span-spotify {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  .link-bar {
+    font-size: 0.8rem;
+  }
+}
